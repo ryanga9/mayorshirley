@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <span className="flex items-center justify-center rounded-xl bg-white px-3 py-2">
               <Image
-                src="/holly-springs-logo.png"
+                src="/holly_springs_logo.png"
                 alt="City of Holly Springs, Georgia"
                 width={120}
                 height={60}

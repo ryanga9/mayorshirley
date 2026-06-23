@@ -167,10 +167,10 @@ The Hero and About pages are already wired to display `public/mayor.jpg`.
 
 ### City logo
 
-The navbar and footer display the official Holly Springs city logo. Save it as
-**`holly-springs-logo.png`** in the `public/` folder
-(`mayorshirley/public/holly-springs-logo.png`). A transparent or white-background
-PNG works best. Once added, it appears in both spots automatically.
+The navbar and footer display the official Holly Springs city logo from
+**`public/holly_springs_logo.png`**. A transparent or white-background PNG works
+best. (If you rename the file, update the two `src="/holly_springs_logo.png"`
+references in `components/Navbar.tsx` and `components/Footer.tsx` to match.)
 
 To use other images elsewhere, drop them in `public/` and reference them with a
 leading slash, e.g. `<Image src="/holly-springs.jpg" ... />`.

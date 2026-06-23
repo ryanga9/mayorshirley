@@ -39,7 +39,7 @@ export default function Navbar() {
         <div className="container-page flex h-16 items-center justify-between">
           <Link href="/" className="group flex items-center gap-3">
             <Image
-              src="/holly-springs-logo.png"
+              src="/holly_springs_logo.png"
               alt="City of Holly Springs, Georgia"
               width={132}
               height={66}
