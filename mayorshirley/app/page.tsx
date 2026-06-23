@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { ArrowRight, Quote, Megaphone, Building2, Calendar } from "lucide-react";
+import { ArrowRight, Quote, Megaphone, Calendar } from "lucide-react";
 import Hero from "@/components/Hero";
 import Newsletter from "@/components/Newsletter";
 import SectionHeading from "@/components/SectionHeading";
 import Badge, { statusTone } from "@/components/Badge";
+import CardMedia from "@/components/CardMedia";
 import { Reveal, RevealGroup, RevealItem } from "@/components/Motion";
 import {
   welcome,
@@ -103,25 +104,33 @@ export default function HomePage() {
               <RevealItem key={u.slug}>
                 <Link
                   href={`/updates#${u.slug}`}
-                  className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
                 >
-                  <div className="flex items-center justify-between">
-                    <Badge tone="blue">{u.category}</Badge>
-                    <span className="text-xs text-navy-400">{u.date}</span>
+                  <CardMedia
+                    image={u.image}
+                    alt={u.title}
+                    category={u.category}
+                    className="h-40 w-full"
+                  />
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="flex items-center justify-between">
+                      <Badge tone="blue">{u.category}</Badge>
+                      <span className="text-xs text-navy-400">{u.date}</span>
+                    </div>
+                    <h3 className="mt-4 font-display text-lg font-bold text-navy-900 group-hover:text-flag-blue">
+                      {u.title}
+                    </h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-navy-600">
+                      {u.summary}
+                    </p>
+                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-flag-blue">
+                      Read more{" "}
+                      <ArrowRight
+                        size={15}
+                        className="transition-transform group-hover:translate-x-1"
+                      />
+                    </span>
                   </div>
-                  <h3 className="mt-4 font-display text-lg font-bold text-navy-900 group-hover:text-flag-blue">
-                    {u.title}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-navy-600">
-                    {u.summary}
-                  </p>
-                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-flag-blue">
-                    Read more{" "}
-                    <ArrowRight
-                      size={15}
-                      className="transition-transform group-hover:translate-x-1"
-                    />
-                  </span>
                 </Link>
               </RevealItem>
             ))}
@@ -148,18 +157,24 @@ export default function HomePage() {
           <RevealGroup className="mt-12 grid gap-6 md:grid-cols-3">
             {featuredProjects.map((p) => (
               <RevealItem key={p.title}>
-                <div className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
-                  <Building2 className="text-flag-blue" size={28} />
-                  <div className="mt-4 flex items-center gap-2">
-                    <Badge tone={statusTone(p.status)}>{p.status}</Badge>
-                    <span className="text-xs text-navy-400">{p.category}</span>
+                <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                  <CardMedia
+                    image={p.image}
+                    alt={p.title}
+                    category={p.category}
+                    className="h-40 w-full"
+                  />
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="flex items-center gap-2">
+                      <Badge tone={statusTone(p.status)}>{p.status}</Badge>
+                    </div>
+                    <h3 className="mt-3 font-display text-lg font-bold text-navy-900">
+                      {p.title}
+                    </h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-navy-600">
+                      {p.summary}
+                    </p>
                   </div>
-                  <h3 className="mt-3 font-display text-lg font-bold text-navy-900">
-                    {p.title}
-                  </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-navy-600">
-                    {p.summary}
-                  </p>
                 </div>
               </RevealItem>
             ))}

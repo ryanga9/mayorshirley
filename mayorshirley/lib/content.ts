@@ -65,6 +65,7 @@ export type Update = {
   category: string;
   summary: string;
   body: string[];
+  image?: string; // optional: e.g. "/updates/amphitheater.jpg" (file in public/)
 };
 
 export const updates: Update[] = [
@@ -170,6 +171,7 @@ export type Project = {
   category: string;
   summary: string;
   details: string;
+  image?: string; // optional: e.g. "/projects/amphitheater.jpg" (file in public/)
 };
 
 export const projects: Project[] = [

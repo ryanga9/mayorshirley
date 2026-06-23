@@ -172,6 +172,40 @@ The navbar and footer display the official Holly Springs city logo from
 best. (If you rename the file, update the two `src="/holly_springs_logo.png"`
 references in `components/Navbar.tsx` and `components/Footer.tsx` to match.)
 
+### Hero background photo
+
+The homepage hero can show a background photo behind the headline. Drop a wide
+image at **`public/hero-bg.jpg`** and it appears automatically (with a navy
+overlay so the text stays readable). If no file is present, the hero falls back
+to its navy gradient — no error. A Town Center, downtown, or civic photo works
+great here.
+
+### Photos on Updates & Projects
+
+Each update and project can show its own photo. If you don't add one, the card
+displays a tasteful color banner instead — so the pages always look polished.
+
+To add a photo:
+
+1. Save the image in `public/` (a subfolder keeps things tidy, e.g.
+   `public/updates/amphitheater.jpg`).
+2. In `lib/content.ts`, add an `image` line to that update or project:
+
+   ```ts
+   {
+     slug: "town-center-amphitheater",
+     title: "New Town Center Amphitheater Taking Shape",
+     // ...existing fields...
+     image: "/updates/amphitheater.jpg",   // ← add this line
+   },
+   ```
+
+3. Commit, push, and the photo replaces the color banner.
+
+> Only use photos you have the rights to — your own/city photos, or images
+> you're permitted to use. Save Facebook photos from your own posts and add them
+> the same way.
+
 To use other images elsewhere, drop them in `public/` and reference them with a
 leading slash, e.g. `<Image src="/holly-springs.jpg" ... />`.
 

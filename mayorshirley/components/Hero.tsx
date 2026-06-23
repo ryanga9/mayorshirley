@@ -9,6 +9,14 @@ import { hero } from "@/lib/content";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-navy-950 via-navy-900 to-navy-800 text-white">
+      {/* Optional background photo. Drop a file at public/hero-bg.jpg to use it.
+          If absent, the navy gradient above shows through gracefully. */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-30"
+        style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy-950/75 via-navy-900/75 to-navy-900/90" />
+
       {/* Animated civic backdrop */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div

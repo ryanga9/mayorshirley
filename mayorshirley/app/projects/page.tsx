@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Building2 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import Badge, { statusTone } from "@/components/Badge";
+import CardMedia from "@/components/CardMedia";
 import { Reveal, RevealGroup, RevealItem } from "@/components/Motion";
 import { projects } from "@/lib/content";
 
@@ -38,25 +38,32 @@ export default function ProjectsPage() {
           <RevealGroup className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {sorted.map((p) => (
               <RevealItem key={p.title}>
-                <div className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
-                  <div className="flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-50 text-flag-blue">
-                      <Building2 size={24} />
-                    </div>
-                    <Badge tone={statusTone(p.status)}>{p.status}</Badge>
+                <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                  <div className="relative">
+                    <CardMedia
+                      image={p.image}
+                      alt={p.title}
+                      category={p.category}
+                      className="h-44 w-full"
+                    />
+                    <span className="absolute right-3 top-3">
+                      <Badge tone={statusTone(p.status)}>{p.status}</Badge>
+                    </span>
                   </div>
-                  <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-flag-red">
-                    {p.category}
-                  </p>
-                  <h3 className="mt-1 font-display text-xl font-bold text-navy-900">
-                    {p.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-navy-600">
-                    {p.summary}
-                  </p>
-                  <p className="mt-4 border-t border-navy-100 pt-4 text-sm leading-relaxed text-navy-500">
-                    {p.details}
-                  </p>
+                  <div className="flex flex-1 flex-col p-6">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-flag-red">
+                      {p.category}
+                    </p>
+                    <h3 className="mt-1 font-display text-xl font-bold text-navy-900">
+                      {p.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-navy-600">
+                      {p.summary}
+                    </p>
+                    <p className="mt-4 border-t border-navy-100 pt-4 text-sm leading-relaxed text-navy-500">
+                      {p.details}
+                    </p>
+                  </div>
                 </div>
               </RevealItem>
             ))}
