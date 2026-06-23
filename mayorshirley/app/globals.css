@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 255 255 255;
+  --foreground: 20 32 70;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Thin civic flag accent line */
+.flag-stripe {
+  background: linear-gradient(
+    90deg,
+    #b22234 0%,
+    #b22234 33%,
+    #ffffff 33%,
+    #ffffff 66%,
+    #27408b 66%,
+    #27408b 100%
+  );
+}
+
+@layer components {
+  .container-page {
+    @apply container mx-auto max-w-[1200px] px-5 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-flag-blue px-6 py-3 text-sm font-semibold text-white shadow-card transition-all duration-300 hover:bg-navy-700 hover:shadow-card-hover focus:outline-none focus:ring-2 focus:ring-flag-blue/40;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-navy-200 bg-white px-6 py-3 text-sm font-semibold text-navy-700 transition-all duration-300 hover:border-flag-blue hover:bg-navy-50 focus:outline-none focus:ring-2 focus:ring-flag-blue/30;
+  }
+
+  .btn-red {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-flag-red px-6 py-3 text-sm font-semibold text-white shadow-card transition-all duration-300 hover:bg-flag-red-dark hover:shadow-card-hover focus:outline-none focus:ring-2 focus:ring-flag-red/40;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.2em] text-flag-red;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-bold leading-tight text-navy-900 sm:text-4xl;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
