@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -37,15 +38,20 @@ export default function Navbar() {
       >
         <div className="container-page flex h-16 items-center justify-between">
           <Link href="/" className="group flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-flag-blue font-display text-lg font-bold text-white shadow-card transition-transform group-hover:scale-105">
-              HS
-            </span>
-            <span className="flex flex-col leading-tight">
-              <span className="font-display text-base font-bold text-navy-900">
-                Mayor Shirley
+            <Image
+              src="/holly-springs-logo.png"
+              alt="City of Holly Springs, Georgia"
+              width={132}
+              height={66}
+              priority
+              className="h-11 w-auto transition-transform group-hover:scale-105"
+            />
+            <span className="hidden flex-col border-l border-navy-200 pl-3 leading-tight sm:flex">
+              <span className="font-display text-sm font-bold text-navy-900">
+                Office of the Mayor
               </span>
               <span className="text-[11px] font-medium uppercase tracking-wider text-navy-500">
-                Holly Springs, GA
+                Ryan Shirley
               </span>
             </span>
           </Link>

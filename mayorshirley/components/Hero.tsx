@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 import { hero } from "@/lib/content";
@@ -89,20 +90,21 @@ export default function Hero() {
           className="lg:col-span-5"
         >
           <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-white/10 to-white/5 shadow-2xl backdrop-blur">
-            {/* Replace this block with a <Image> of Mayor Shirley.
-                See README -> "Adding photos". */}
-            <div className="flex h-full flex-col items-center justify-center p-8 text-center">
-              <div className="flex h-28 w-28 items-center justify-center rounded-full bg-white font-display text-4xl font-bold text-flag-blue">
-                RS
-              </div>
-              <p className="mt-6 font-display text-2xl font-bold text-white">
+            <Image
+              src="/mayor.jpg"
+              alt="Ryan Shirley, Mayor of Holly Springs"
+              fill
+              priority
+              sizes="(max-width: 1024px) 80vw, 384px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/10 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-6 pb-7">
+              <p className="font-display text-2xl font-bold text-white">
                 Ryan Shirley
               </p>
-              <p className="mt-1 text-sm text-white/70">
+              <p className="mt-1 text-sm text-white/80">
                 Mayor, City of Holly Springs
-              </p>
-              <p className="mt-6 text-xs uppercase tracking-[0.2em] text-white/50">
-                Add mayor photo here
               </p>
             </div>
             <div className="flag-stripe absolute inset-x-0 bottom-0 h-1.5" />

@@ -16,6 +16,8 @@ export const site = {
   domain: "www.mayorshirley.com",
   email: "rshirley@hollyspringsga.us",
   facebook: "https://www.facebook.com/profile.php?id=61565438793386",
+  townCenterFacebook: "https://www.facebook.com/hollyspringstowncenter",
+  townCenterWebsite: "https://hollyspringstowncenter.com",
   // Used by the contact form. See README -> "Contact form setup".
   formspreeEndpoint: "https://formspree.io/f/your-form-id",
 };
@@ -66,6 +68,19 @@ export type Update = {
 };
 
 export const updates: Update[] = [
+  {
+    slug: "town-center-amphitheater",
+    title: "New Town Center Amphitheater Taking Shape",
+    date: "June 20, 2026",
+    category: "Development",
+    summary:
+      "Construction is well underway on the Holly Springs Town Center Amphitheater — the centerpiece of our new entertainment district, set to host concerts and community events.",
+    body: [
+      "One of the most exciting projects in our city is rising fast: the Holly Springs Town Center Amphitheater. Following the groundbreaking, crews have been building out the stage, green room, dressing rooms, and public restrooms that will make this a true community venue.",
+      "Located on the western side of the Town Center near the railroad tracks, the amphitheater will anchor a walkable, Main Street-inspired entertainment district — with restaurants, retail, a dog park, food trucks, and gathering spaces on either side, plus a parking deck offering more than 300 free public spaces.",
+      "Once open, the amphitheater will host concerts and community favorites like the Holly Springs Harmonies summer series. This is what moving Holly Springs forward looks like — a place for neighbors to gather, celebrate, and enjoy our growing city together.",
+    ],
+  },
   {
     slug: "downtown-streetscape-progress",
     title: "Downtown Streetscape Improvements Underway",
@@ -159,6 +174,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Town Center Amphitheater & Entertainment District",
+    status: "In Progress",
+    category: "Community & Economic Development",
+    summary:
+      "A new amphitheater and walkable entertainment district at Holly Springs Town Center — concerts, restaurants, retail, food trucks, and gathering spaces.",
+    details:
+      "The Holly Springs Town Center Amphitheater will host concerts and events like the Holly Springs Harmonies series, anchoring a Main Street-style district with dining, retail, a dog park, and 300+ free parking spaces. The broader Town Center is expected to be fully built out by 2027–2028.",
+  },
+  {
     title: "Downtown Revitalization",
     status: "In Progress",
     category: "Economic Development",
@@ -224,6 +248,14 @@ export type CommunityEvent = {
 };
 
 export const events: CommunityEvent[] = [
+  {
+    title: "Holly Springs Harmonies Concert Series",
+    date: "Summer 2026",
+    time: "Evenings · see schedule",
+    location: "Holly Springs Town Center Amphitheater",
+    description:
+      "Live music returns with our popular Holly Springs Harmonies series — coming to the new Town Center Amphitheater. Bring the family for great music in the heart of our new entertainment district.",
+  },
   {
     title: "Independence Day Celebration",
     date: "July 4, 2026",

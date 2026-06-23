@@ -156,25 +156,24 @@ re-run `vercel --prod`) and the site updates.
 
 ---
 
-## 🖼️ Adding photos
+## 🖼️ Adding the Mayor's photo
 
-1. Drop an image into the `public/` folder, e.g. `public/mayor.jpg`.
-2. In `components/Hero.tsx` (and `app/about/page.tsx`), find the comment
-   `Replace ... with a real photo` and swap the placeholder block for:
+The Hero and About pages are already wired to display `public/mayor.jpg`.
+**Just add the file:**
 
-   ```tsx
-   import Image from "next/image";
+1. Save the mayor's portrait as **`mayor.jpg`** inside the `public/` folder
+   (i.e. `mayorshirley/public/mayor.jpg`). A portrait/vertical photo works best.
+2. Commit and push (or run `vercel --prod`). The photo appears automatically.
 
-   <Image
-     src="/mayor.jpg"
-     alt="Mayor Ryan Shirley"
-     fill
-     className="object-cover"
-     priority
-   />
-   ```
+### City logo
 
-3. Save and redeploy.
+The navbar and footer display the official Holly Springs city logo. Save it as
+**`holly-springs-logo.png`** in the `public/` folder
+(`mayorshirley/public/holly-springs-logo.png`). A transparent or white-background
+PNG works best. Once added, it appears in both spots automatically.
+
+To use other images elsewhere, drop them in `public/` and reference them with a
+leading slash, e.g. `<Image src="/holly-springs.jpg" ... />`.
 
 ---
 

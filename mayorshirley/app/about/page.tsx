@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Heart, Eye, Sparkles, Users } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
@@ -48,19 +49,21 @@ export default function AboutPage() {
         <div className="container-page grid gap-12 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
             <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-navy-100 bg-gradient-to-br from-navy-50 to-white shadow-card">
-              {/* Replace with a real photo — see README "Adding photos". */}
-              <div className="flex h-full flex-col items-center justify-center p-8 text-center">
-                <div className="flex h-28 w-28 items-center justify-center rounded-full bg-flag-blue font-display text-4xl font-bold text-white">
-                  RS
-                </div>
-                <p className="mt-6 font-display text-2xl font-bold text-navy-900">
+              <Image
+                src="/mayor.jpg"
+                alt="Ryan Shirley, Mayor of Holly Springs"
+                fill
+                priority
+                sizes="(max-width: 1024px) 80vw, 384px"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-transparent to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6 pb-7">
+                <p className="font-display text-2xl font-bold text-white">
                   Ryan Shirley
                 </p>
-                <p className="mt-1 text-sm text-navy-500">
+                <p className="mt-1 text-sm text-white/80">
                   Mayor, City of Holly Springs
-                </p>
-                <p className="mt-6 text-xs uppercase tracking-[0.2em] text-navy-300">
-                  Add mayor photo here
                 </p>
               </div>
               <div className="flag-stripe absolute inset-x-0 bottom-0 h-1.5" />

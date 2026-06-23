@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Mail, MapPin } from "lucide-react";
 import { nav, site } from "@/lib/content";
 
@@ -9,8 +10,14 @@ export default function Footer() {
       <div className="container-page grid gap-10 py-14 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white font-display text-lg font-bold text-flag-blue">
-              HS
+            <span className="flex items-center justify-center rounded-xl bg-white px-3 py-2">
+              <Image
+                src="/holly-springs-logo.png"
+                alt="City of Holly Springs, Georgia"
+                width={120}
+                height={60}
+                className="h-9 w-auto"
+              />
             </span>
             <div className="leading-tight">
               <p className="font-display text-lg font-bold text-white">
@@ -65,7 +72,18 @@ export default function Footer() {
                 className="flex items-center gap-3 text-navy-300 transition-colors hover:text-white"
               >
                 <Facebook size={18} className="shrink-0 text-flag-red" />
-                Follow on Facebook
+                Mayor Shirley on Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                href={site.townCenterFacebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-navy-300 transition-colors hover:text-white"
+              >
+                <Facebook size={18} className="shrink-0 text-flag-red" />
+                Holly Springs Town Center
               </a>
             </li>
             <li className="flex items-center gap-3 text-navy-300">
