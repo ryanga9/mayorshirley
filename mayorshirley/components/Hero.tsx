@@ -12,10 +12,13 @@ export default function Hero() {
       {/* Optional background photo. Drop a file at public/hero-bg.jpg to use it.
           If absent, the navy gradient above shows through gracefully. */}
       <div
-        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-30"
+        className="pointer-events-none absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/hero-bg.jpg')" }}
       />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy-950/75 via-navy-900/75 to-navy-900/90" />
+      {/* Darker on the left (behind the text), lighter on the right so the
+          photo shows through while keeping the headline readable. */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy-950/85 via-navy-900/40 to-navy-900/10" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950/55 via-transparent to-transparent" />
 
       {/* Animated civic backdrop */}
       <div className="pointer-events-none absolute inset-0">
@@ -28,14 +31,6 @@ export default function Hero() {
           className="absolute -right-24 top-12 h-96 w-96 rounded-full bg-flag-red/25 blur-3xl"
           animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
           transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-            backgroundSize: "44px 44px",
-          }}
         />
       </div>
 
